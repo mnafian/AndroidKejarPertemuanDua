@@ -1,5 +1,6 @@
 package kejar.android.sampletwo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -50,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
             isMinus = false;
         }
         return isMinus;
+    }
+
+    public void orderCoffe(View view) {
+        Intent intentOrder = new Intent(MainActivity.this, OrderActivity.class);
+        intentOrder.putExtra("coffeTotal", coffeeTotal);
+        intentOrder.putExtra("coffePriceTotal", coffeePriceTotal);
+
+        startActivity(intentOrder);
     }
 
 }
